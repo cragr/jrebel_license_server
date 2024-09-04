@@ -12,9 +12,9 @@ RUN \
   microdnf --setopt=install_weak_deps=0 --setopt=tsflags=nodocs install -y unzip && \
   microdnf clean all && \
   mkdir -p "${JREBEL_INSTALL}" && \
-  chown -R default: "${JREBEL_INSTALL}"
+  chown -R 1001:0 "${JREBEL_INSTALL}"
 
-USER 185
+USER 1001
 
 RUN \
   cd "${JREBEL_INSTALL}" && \
